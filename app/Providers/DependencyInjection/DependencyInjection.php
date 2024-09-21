@@ -18,6 +18,8 @@ abstract class DependencyInjection
     public static function providers(Application $app): Collection
     {
         return collect([
+            new UserDi($app),
+            new LoginDi($app),
         ]);
     }
     public function configure(): void
