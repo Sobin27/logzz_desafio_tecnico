@@ -8,8 +8,6 @@ class CategoryFindByIdRepository implements ICategoryFindByIdRepository
 {
     public function findById(int $id): Category
     {
-        return Category::query()->find($id)
-            ->get()
-            ->first();
+        return Category::query()->find($id);
     }
 }

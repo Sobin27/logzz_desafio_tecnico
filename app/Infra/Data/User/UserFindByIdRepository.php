@@ -8,8 +8,6 @@ class UserFindByIdRepository implements IUserFindByIdRepository
 {
     public function findById(int $id): User
     {
-        return User::query()->find($id)
-            ->get()
-            ->first();
+        return User::query()->find($id);
     }
 }

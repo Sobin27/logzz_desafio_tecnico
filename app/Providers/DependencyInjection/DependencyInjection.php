@@ -21,6 +21,7 @@ abstract class DependencyInjection
             new UserDi($app),
             new LoginDi($app),
             new CategoryDi($app),
+            new ProductsDi($app),
         ]);
     }
     public function configure(): void
