@@ -17,7 +17,7 @@ class ProductsCreateRequest extends BaseRequest
             'price' => 'required|numeric',
             'category' => 'required|string',
             'description' => 'required|string',
-            'image' => 'image'
+            'image' => 'url'
         ];
     }
 }

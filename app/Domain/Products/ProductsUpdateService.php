@@ -11,7 +11,6 @@ class ProductsUpdateService implements IProductsUpdateService
 {
     private Products $products;
     private ProductsUpdateRequest $request;
-    private string $pathImage;
 
     public function __construct(
         private readonly IProductsFindByIdRepository $productsFindByIdRepository,
@@ -23,7 +22,6 @@ class ProductsUpdateService implements IProductsUpdateService
     {
         $this->setRequest($request);
         $this->setProduct();
-        if (isset($request->image)) $this->setImagePath();
         $this->mapperProduct();
         return $this->productsUpdateRepository->updateProduct($this->products);
     }
@@ -41,10 +39,6 @@ class ProductsUpdateService implements IProductsUpdateService
         $this->products->description = $this->request->description ?? $this->products->description;
         $this->products->price = $this->request->price ?? $this->products->price;
         $this->products->category = $this->request->category ?? $this->products->category;
-        $this->products->image_url = $this->pathImage ?? $this->products->image_url;
-    }
-    private function setImagePath(): void
-    {
-        $this->pathImage = $this->request->file('image')->store('products/image', 'public');
+        $this->products->image_url = $this->request->image ?? $this->products->image_url;
     }
 }

@@ -7,14 +7,14 @@ use App\Models\Products;
 
 class ProductsCreateRepository implements IProductsCreateRepository
 {
-    public function createProducts(ProductsCreateRequest $request, string $pathImage): bool
+    public function createProducts(ProductsCreateRequest $request): bool
     {
         $product = Products::query()->create([
             'name' => $request->name,
             'price' => $request->price,
             'description' => $request->description,
             'category' => $request->category,
-            'image_url' => $pathImage
+            'image_url' => $request->image
         ]);
         if ($product) return true;
         return false;

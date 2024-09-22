@@ -18,7 +18,7 @@ class ProductsUpdateRequest extends BaseRequest
             'price' => 'numeric',
             'category' => 'string',
             'description' => 'string',
-            'image' => 'image'
+            'image' => 'url'
         ];
     }
 }
