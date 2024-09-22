@@ -62,3 +62,7 @@ acesse no seu navegador a rota: http://127.0.0.1:8000/ ou http://localhost:8000/
 ```bash
 php artisan import:products
 ```
+Ou se preferir importar apenas um pedido, execute o seguinte comando:
+```bash
+php artisan import:products --id=id_produto
+```
